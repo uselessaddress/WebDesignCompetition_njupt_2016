@@ -1,3 +1,8 @@
+var mouse = {
+    x: 0,
+    y: 0,
+    down: false
+}
 var stars_bg = {};
 (function() {
     function DymaticBackground(opt) {
@@ -9,6 +14,7 @@ var stars_bg = {};
         self.canvas.width = this.options.canvasWidth;
         self.canvas.height = this.options.canvasHeight;
         self._initStars(self.context);
+        self.canvas.addEventListener('mousemove', self.mouseMove);
     }
     DymaticBackground.prototype._initDom = function(opt) {
         this.options = {
@@ -27,7 +33,6 @@ var stars_bg = {};
         var canvasEle = document.createElement("canvas");
         var canvasContainer = document.getElementById(this.options.canvasContainerID);
         canvasContainer.appendChild(canvasEle);
-        canvasContainer.addEventListener('mousemove', self.mousemove, false);
         canvasEle.style.cssText = "z-index:-20;position:absolute;left:0;top:0;bottom:0;right:0;";
         canvasEle.style.opacity = this.options.canvasOpacity;
         for (var key in this.options.canvasEleCss) {
@@ -63,23 +68,44 @@ var stars_bg = {};
                 var cx = self.starArr[k].centerX;
                 var cy = self.starArr[k].centerY;
                 var dis = Math.sqrt(Math.abs(cx - bx) * Math.abs(cx - bx) + Math.abs(by - cy) * Math.abs(by - cy));
-                if (dis < 0.05 * self.canvas.width) {
+                if (dis < 0.045 * self.canvas.width) {
                     self._initLine(context, bx, by, cx, cy);
                 }
             }
         }
     }
     DymaticBackground.prototype.mouseMove = function(event) {
-        var self = this;
         mouse.x = event.pageX;
         mouse.y = event.pageY;
-        self.render();
+        console.log(mouse.x, mouse.y)
+        this.render();
     }
     DymaticBackground.prototype.render = function() {
         var self = this;
+        self.context.clearRect(0, 0, self.options.canvasWidth, self.options.canvasHeight);
+        for (var i = 0; i < self.options.starsnum; i++) {
+            var changeStar = self.starArr[i];
+            changeStar.centerX += (mouse.x / 2 * (1 + movArr[i]));
+            changeStar.centerY += (mouse.y / 2 * (1 + movArr[i]));
+            self.starArr[i] = changeStar;
+            self.drawStar(self.context, changeStar.centerX, changeStar.centerY, changeStar.radius);
+        }
+        for (var j = 0; j < self.options.starsnum; j++) {
+            for (var k = j; k < self.options.starsnum; k++) {
+                var bx = self.starArr[j].centerX;
+                var by = self.starArr[j].centerY;
+                var cx = self.starArr[k].centerX;
+                var cy = self.starArr[k].centerY;
+                var dis = Math.sqrt(Math.abs(cx - bx) * Math.abs(cx - bx) + Math.abs(by - cy) * Math.abs(by - cy));
+                if (dis < 0.045 * self.canvas.width) {
+                    self._initLine(self.context, bx, by, cx, cy);
+                }
+            }
+        }
     }
     DymaticBackground.prototype._initLine = function(ctx, bx, by, cx, cy) {
         var self = this;
+
         function Line(bx, by, cx, cy) {
             this.beginX = bx;
             this.beginY = by;
@@ -97,6 +123,7 @@ var stars_bg = {};
     }
     DymaticBackground.prototype.drawStar = function(ctx, x, y, r) {
         var self = this;
+
         function Circle(x, y, r) {
             this.centerX = x;
             this.centerY = y;
