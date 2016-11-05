@@ -26,7 +26,7 @@ function init() { //初始化
 	for (var i = 0; i < starsnum; i++) {
 		x = random(-100, canvas.width + 100);
 		y = random(-100, canvas.height + 100);
-		r = 2;
+		r = 1;
 		var newStar = drawCirle(context, x, y, r);
 		starArr.push(newStar);
 		movArr.push(Math.random());
@@ -43,17 +43,17 @@ function init() { //初始化
 			}
 		}
 	}
-	canvas.addEventListener('mousemove', mouseMove, false); //鼠标移动监控
+	window.addEventListener('mousemove', mouseMove, false); //鼠标移动监控
 }
 
 function mouseMove(event) { //鼠标移动事件
 	if (flag) {
-		mouse_pre.x = event.pageX;
-		mouse_pre.y = event.pageY;
+		mouse_pre.x = event.screenX;
+		mouse_pre.y = event.screenY;
 		flag = false;
 	}
-	mouse_cur.x = event.pageX;
-	mouse_cur.y = event.pageY;
+	mouse_cur.x = event.screenX;
+	mouse_cur.y = event.screenY;
 	render();
 	mouse_pre.x = mouse_cur.x;
 	mouse_pre.y = mouse_cur.y;
@@ -96,10 +96,6 @@ function drawCirle(ctx, x, y, r) { //在(x,y)处画半径为r的圆
 	ctx.fillStyle = "rgba(255,255,255,1)";
 	ctx.fill();
 	ctx.closePath();
-	ctx.shadowColor = "#ffffff";
-	ctx.shadowOffsetX = 0;
-	ctx.shadowOffsetY = 0;
-	ctx.shadowBlur = 10;
 	return circle;
 }
 
@@ -116,7 +112,7 @@ function drawLine(ctx, bx, by, cx, cy) { //用直线把(bx,by)到(cx,cy)连起�
 	ctx.lineTo(line.closeX, line.closeY);
 	ctx.stroke();
 	ctx.lineWidth = 1;
-	ctx.strokeStyle = "rgba(255,255,255,0.5)"
+	ctx.strokeStyle = "rgba(255,255,255,0.3)"
 	ctx.closePath();
 }
 
