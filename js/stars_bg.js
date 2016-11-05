@@ -1,6 +1,6 @@
 var canvas;
 var context;
-var starsnum = 500; //星星数量
+var starsnum = 200; //星星数量
 var mouse_pre = {
 	x: 0,
 	y: 0
@@ -9,6 +9,8 @@ var mouse_cur = {
 	x: 0,
 	y: 0
 };
+
+var flag = true;
 var starArr = []; //储存每一个星星的位置
 var movArr = []; //储存移动变化的因子
 
@@ -16,7 +18,7 @@ function random(lo, hi) { //随机获得从lo-hi的整数
 	return Math.floor(Math.random() * (hi - lo + 1) + lo);
 }
 
-function init() { //初始化
+function init(event) { //初始化
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");
 	canvas.width = window.innerWidth;
@@ -36,7 +38,7 @@ function init() { //初始化
 			var cx = starArr[k].centerX;
 			var cy = starArr[k].centerY;
 			var dis = Math.sqrt(Math.abs(cx - bx) * Math.abs(cx - bx) + Math.abs(by - cy) * Math.abs(by - cy));
-			if (dis < 0.04 * (canvas.width + canvas.height) / 2) {
+			if (dis < 0.06 * (canvas.width + canvas.height) / 2) {
 				drawLine(context, bx, by, cx, cy);
 			}
 		}
@@ -45,6 +47,11 @@ function init() { //初始化
 }
 
 function mouseMove(event) { //鼠标移动事件
+	if (flag) {
+		mouse_pre.x = event.pageX;
+		mouse_pre.y = event.pageY;
+		flag = false;
+	}
 	mouse_cur.x = event.pageX;
 	mouse_cur.y = event.pageY;
 	render();
@@ -58,8 +65,8 @@ function render() {
 	dy = mouse_cur.y - mouse_pre.y;
 	for (var i = 0; i < starsnum; i++) {
 		var changeStar = starArr[i];
-		changeStar.centerX += dx / 2 * movArr[i];
-		changeStar.centerY += dy / 2 * movArr[i];
+		changeStar.centerX += dx / 20 * movArr[i];
+		changeStar.centerY += dy / 20 * movArr[i];
 		drawCirle(context, changeStar.centerX, changeStar.centerY, changeStar.radius);
 		starArr[i] = changeStar;
 	}
@@ -70,7 +77,7 @@ function render() {
 			var cx = starArr[k].centerX;
 			var cy = starArr[k].centerY;
 			var dis = Math.sqrt(Math.abs(cx - bx) * Math.abs(cx - bx) + Math.abs(by - cy) * Math.abs(by - cy));
-			if (dis < 0.04 * (canvas.width + canvas.height) / 2) {
+			if (dis < 0.06 * (canvas.width + canvas.height) / 2) {
 				drawLine(context, bx, by, cx, cy);
 			}
 		}
@@ -89,6 +96,10 @@ function drawCirle(ctx, x, y, r) { //在(x,y)处画半径为r的圆
 	ctx.fillStyle = "rgba(255,255,255,1)";
 	ctx.fill();
 	ctx.closePath();
+	ctx.shadowColor = "#ffffff";
+	ctx.shadowOffsetX = 0;
+	ctx.shadowOffsetY = 0;
+	ctx.shadowBlur = 10;
 	return circle;
 }
 
