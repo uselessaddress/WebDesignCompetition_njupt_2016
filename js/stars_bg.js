@@ -1,7 +1,11 @@
 var canvas;
 var context;
 var starsnum = 500; //星星数量
-var mouse = {
+var mouse_pre = {
+	x: 0,
+	y: 0
+};
+var mouse_cur = {
 	x: 0,
 	y: 0
 };
@@ -41,18 +45,22 @@ function init() { //初始化
 }
 
 function mouseMove(event) { //鼠标移动事件
-	mouse.x = event.pageX;
-	mouse.y = event.pageY;
+	mouse_cur.x = event.pageX;
+	mouse_cur.y = event.pageY;
 	render();
+	mouse_pre.x = mouse_cur.x;
+	mouse_pre.y = mouse_cur.y;
 }
 
 function render() {
 	context.clearRect(0, 0, canvas.width, canvas.height);
+	dx = mouse_cur.x - mouse_pre.x;
+	dy = mouse_cur.y - mouse_pre.y;
 	for (var i = 0; i < starsnum; i++) {
 		var changeStar = starArr[i];
-		changeStar.centerX += mouse.x/2 * movArr[i];
-		changeStar.centerY += mouse.y/2 * movArr[i];
-		drawCirle(context,changeStar.centerX, changeStar.centerY, changeStar.radius);
+		changeStar.centerX += dx / 2 * movArr[i];
+		changeStar.centerY += dy / 2 * movArr[i];
+		drawCirle(context, changeStar.centerX, changeStar.centerY, changeStar.radius);
 		starArr[i] = changeStar;
 	}
 	for (var j = 0; j < starsnum; j++) {
