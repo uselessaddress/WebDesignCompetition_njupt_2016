@@ -18,7 +18,7 @@ function random(lo, hi) { //随机获得从lo-hi的整数
 	return Math.floor(Math.random() * (hi - lo + 1) + lo);
 }
 
-function init(event) { //初始化
+function init() { //初始化
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");
 	canvas.width = window.innerWidth;
