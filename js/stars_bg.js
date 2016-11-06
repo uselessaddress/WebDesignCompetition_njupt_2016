@@ -1,6 +1,6 @@
-var canvas;
+﻿ canvas;
 var context;
-var starsnum = 200; //星星数量
+var starsnum = 150; //星星数量
 var mouse_pre = {
 	x: 0,
 	y: 0
@@ -38,7 +38,7 @@ function init() { //初始化
 			var cx = starArr[k].centerX;
 			var cy = starArr[k].centerY;
 			var dis = Math.sqrt(Math.abs(cx - bx) * Math.abs(cx - bx) + Math.abs(by - cy) * Math.abs(by - cy));
-			if (dis < 0.06 * (canvas.width + canvas.height) / 2) {
+			if (dis < 0.065 * (canvas.width + canvas.height) / 2) {
 				drawLine(context, bx, by, cx, cy);
 			}
 		}
@@ -77,7 +77,7 @@ function render() {
 			var cx = starArr[k].centerX;
 			var cy = starArr[k].centerY;
 			var dis = Math.sqrt(Math.abs(cx - bx) * Math.abs(cx - bx) + Math.abs(by - cy) * Math.abs(by - cy));
-			if (dis < 0.06 * (canvas.width + canvas.height) / 2) {
+			if (dis < 0.065 * (canvas.width + canvas.height) / 2) {
 				drawLine(context, bx, by, cx, cy);
 			}
 		}
