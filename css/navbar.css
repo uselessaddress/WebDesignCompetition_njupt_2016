@@ -40,6 +40,6 @@
 	color: #818A91;
 	font-family: nav-font;
 }
-li a:hover{
+.nav_a a:hover{
 	color: rgba(255,255,255,0.9);
 }
