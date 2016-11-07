@@ -23,6 +23,7 @@ function init() { //初始化
 	context = canvas.getContext("2d");
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
+	canvas.style.cssText = "top: 0";
 	for (var i = 0; i < starsnum; i++) {
 		x = random(-100, canvas.width + 100);
 		y = random(-100, canvas.height + 100);
