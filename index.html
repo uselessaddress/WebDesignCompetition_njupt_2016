@@ -10,11 +10,10 @@
 	<!--css-->
 	<link rel="stylesheet" type="text/css" href="css/bg.css">
 	<link rel="stylesheet" type="text/css" href="css/navbar.css">
-	<script type="text/javascript" src = "js/slider.js"></script>
+	<script type="text/javascript" src="js/mousewheel.js"></script>
 
 </head>
-<body onscroll="scroll()">
-	<script type="text/javascript" src="js/navbar_transform.js"></script>
+<body onscroll="scroll()" onload="load()">
 	
 	<canvas id="canvas"></canvas>
 	<!--star_bg-->
@@ -22,18 +21,20 @@
 	</script>
 
 	<div id = "navbar">
-		<div class="brand">
-			
+		<div id="brand">
+			<img src="pic/icon.png">
 		</div>
 		
 		<ul class="nav_menu">
-			<li class="nav_link"><a class="nav_a" href="#">天协简介</a></li>
-			<li class="nav_link"><a class="nav_a" href="#">部门介绍</a></li>
-			<li class="nav_link"><a class="nav_a" href="#">日常</a></li>
-			<li class="nav_link"><a class="nav_a" href="#">公告</a></li>
-			<li class="nav_link"><a class="nav_a" href="#">素材</a></li>
-			<li class="nav_link"><a class="nav_a" href="#">天气</a></li>
-			<li class="nav_link"><a class="nav_a" href="#">关于</a></li>
+			<div id="nav_lb">
+				<li class="nav_link"><a class="nav_a" href="#">天协简介</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">部门介绍</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">日常</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">公告</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">素材</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">天气</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">关于</a></li>
+			</div>	
 		</ul>
 	</div>
 
