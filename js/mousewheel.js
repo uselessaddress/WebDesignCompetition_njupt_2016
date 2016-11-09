@@ -1,5 +1,6 @@
 var pre_wheel;
 var cur_wheel;
+var wheelup = false;
 
 function load() {
 	nav = document.getElementById("navbar")
@@ -18,6 +19,12 @@ function scroll() {
 	lb = document.getElementById("nav_lb")
 	icon = document.getElementById("brand")
 	cur_wheel = document.body.scrollTop;
+	if(pre_wheel > cur_wheel){
+		wheelup = true;
+	}
+	else{
+		wheelup = false;
+	}
 	if(cur_wheel != 0 && pre_wheel == 0){
 		nav.style.cssText = "animation: nav_shrink 1s forwards;"
 		nav_lb.style.cssText = "animation: a_down 1s forwards;"

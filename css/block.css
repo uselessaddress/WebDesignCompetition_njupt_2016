@@ -27,7 +27,7 @@
 	display: block;
 	font-size: 3vh;
 }
-.pg_1_ani{
+#pg_1_ani{
 	cursor: pointer;
 	position:relative;
 	display: block;
@@ -38,7 +38,7 @@
 	padding-left: 45%;
 	height: 10vh;
 }
-.pg_1_ani img{
+#pg_1_ani img{
 	display: block;
 	width: 50%;
 	animation: arrow 1s infinite;
@@ -46,7 +46,7 @@
 	padding-right: 25%;
 }
 
-.pg_1_ani span{
+#pg_1_ani span{
 	font-family: title-font;
 	display: block;
 	width:90%;

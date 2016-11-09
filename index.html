@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="css/block.css">
 	<script type="text/javascript" src="js/mousewheel.js"></script>
+	<script type="text/javascript" src="js/tween.js"></script>
 
 </head>
 <body onscroll="scroll()" onload="load()">
@@ -49,12 +50,13 @@
 			
 		</div>
 		
-		<div class="pg_1_ani">
+		<div id="pg_1_ani" onclick="jump(0, 1)">
 			<span>
 				点击进入下一页
 			</span>
 			<img src="pic/arrow.svg">
 		</div>
+		<script type="text/javascript" src="js/jump.js"></script>
 	</div>
 	<div class="block" style="background-color: green;opacity: 0.5"></div>
 	<div class="block" style="background-color: yellow;opacity: 0.5"></div>
