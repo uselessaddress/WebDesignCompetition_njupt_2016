@@ -1,0 +1,77 @@
+#navbar{			/*navbar<->header*/
+	width: 100%;
+	height: 10vh;
+	position: fixed;
+	top: 0px;
+	overflow: hidden;
+	z-index: 100;
+}
+#brand{
+	display: block;
+	opacity: 0;
+	float: left;
+	padding-left: 14%;
+	height: 100%;
+}
+@font-face { 
+	font-family: nav-font; 
+	src: url('font/nav-font.ttf'); 
+}
+#nav_lb{
+	display: block;
+	padding-top: 4vh;
+}
+#brand img{
+	position: relative;
+	padding-top: 10%;
+	height: 80%;
+}
+.nav_menu{
+	margin: 0 auto;
+	display: block;
+	float: right;
+	height: 100%;
+}
+.nav_link{
+	display: block;
+	float: left;
+	height: 100%;
+	width: 20vh;
+	overflow: hidden;
+	text-align: center;
+}
+.nav_a{
+	display: block;
+	text-decoration: none;
+	color: #818A91;
+	font-family: nav-font;
+}
+a:hover{
+	color: white;
+}
+@keyframes nav_shrink{
+	from {height: 10vh;}
+	to {height: 8vh;
+		background-color: #18263D;}
+}
+@keyframes nav_expand{
+	from {height: 8vh;
+		background-color: #18263D;}
+	to {height: 10vh;}
+}
+@keyframes a_down{
+	from {padding-top: 4vh;}
+	to {padding-top: 3vh;}
+}
+@keyframes a_up{
+	from {padding-top: 3vh;}
+	to {padding-top: 4vh;}
+}
+@keyframes icon_in{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+@keyframes icon_out{
+	from{opacity: 1;}
+	to{opacity: 0;}
+}

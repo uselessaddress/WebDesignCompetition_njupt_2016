@@ -1,22 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Stars</title>
 
-	<!--jquery_lib-->
-	<script type="text/javascript" src="js/jquery-1.10.2.min.js">
-	</script>
-
-	<!--stars_bg-->
-	<script type="text/javascript" src="js/stars_bg.js">
-	</script>
+	<link rel="shortcut icon" href="pic/favicon.ico">
 
 	<!--css-->
 	<link rel="stylesheet" type="text/css" href="css/bg.css">
+	<link rel="stylesheet" type="text/css" href="css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="css/block.css">
+	<script type="text/javascript" src="js/mousewheel.js"></script>
+	<script type="text/javascript" src="js/tween.js"></script>
+
 </head>
-<body id="canvas-container">
-	<script>var bg=new stars_bg.background();</script>
+<body onscroll="scroll()" onload="load()">
+	
+	<canvas id="canvas"></canvas>
+	<!--star_bg-->
+	<script type="text/javascript" src="js/stars_bg.js">
+	</script>
+
+	<div id = "navbar">
+		<div id="brand">
+			<img src="pic/icon.png">
+		</div>
+		
+		<ul class="nav_menu">
+			<div id="nav_lb">
+				<li class="nav_link"><a class="nav_a" href="#">天协简介</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">部门介绍</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">日常</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">公告</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">素材</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">天气</a></li>
+				<li class="nav_link"><a class="nav_a" href="#">关于</a></li>
+			</div>	
+		</ul>
+	</div>
+	<div class="block">
+		<div id="pg_1_title">
+			<div class="pg_1_ch">
+				南邮天文社
+			</div>
+			<div class="pg_1_eng">
+				Nanjing University of Posts and Telecommunications Astronomy Association
+			</div>
+			
+		</div>
+		
+		<div id="pg_1_ani" onclick="jump(0, 1)">
+			<span>
+				点击进入下一页
+			</span>
+			<img src="pic/arrow.svg">
+		</div>
+		<script type="text/javascript" src="js/jump.js"></script>
+	</div>
+	<div class="block" style="background-color: green;opacity: 0.5"></div>
+	<div class="block" style="background-color: yellow;opacity: 0.5"></div>
+	<div class="block"></div>
+	<div class="block" style="background-color: orange;opacity: 0.5"></div>
 </body>
 </html>

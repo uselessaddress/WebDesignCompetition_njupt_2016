@@ -1,11 +1,14 @@
 body{
-	background-color: #242424;
-}
-*{
-	margin:0;
-	padding:0;
+	background-color: #060E1B;
 }
 html,body{
+	top: 0;
+	margin: 0 auto;
 	height:100%;
 	width:100%;
+}
+canvas{
+	overflow: hidden;
+	position: fixed;
+	z-index: -20;
 }
