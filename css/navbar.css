@@ -4,6 +4,7 @@
 	position: fixed;
 	top: 0px;
 	overflow: hidden;
+	z-index: 100;
 }
 #brand{
 	display: block;
@@ -45,14 +46,17 @@
 	color: #818A91;
 	font-family: nav-font;
 }
+a:hover{
+	color: white;
+}
 @keyframes nav_shrink{
 	from {height: 10vh;}
 	to {height: 8vh;
-		background-color: #242244;}
+		background-color: #18263D;}
 }
 @keyframes nav_expand{
 	from {height: 8vh;
-		background-color: #242244;}
+		background-color: #18263D;}
 	to {height: 10vh;}
 }
 @keyframes a_down{

@@ -7,7 +7,7 @@ function load() {
 	icon = document.getElementById("brand")
 	pre_wheel = cur_wheel = document.body.scrollTop;
 	if (cur_wheel != 0) {
-		nav.style.cssText = "height: 8vh;background-color: #242244;"
+		nav.style.cssText = "height: 8vh;background-color: #18263D;"
 		nav_lb.style.cssText = "padding-top: 3vh;"
 		icon.style.cssText = "opacity: 1;"
 	}
