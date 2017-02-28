@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"><!--网页编码方式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--内核兼容问题-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--自动响应 宽度 缩放度-->
+    <link rel="icon" href="img/AAA.ico"><!--网页小图标-->
+
+    <link rel="stylesheet" type="text/css" href="css/ind_hea.css">
+    <link rel="stylesheet" type="text/css" href="css/first.css">
+    <link rel="stylesheet" type="text/css" href="css/second.css">
+    <link rel="stylesheet" type="text/css" href="css/third.css">
+    <link rel="stylesheet" type="text/css" href="css/fourth.css">
+    <link rel="stylesheet" type="text/css" href="css/fifth.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+
+    <script type="text/javascript" src="js/scroll.js"></script><!--header scroll js-->
+    <script type="text/javascript" src="js/jump.js"></script><!--return top js-->
+    <script type="text/javascript" src="js/tween.js"></script><!--slow action js-->
+
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+    <title>南邮天文协会-NJUPT Astronomy Ametuers' Association</title>
+
+</head>
+<body onscroll="scroll()" onload="load()">
+
+    <div id="background" style="background-color: #060E1B;">
+        <canvas id="stars"></canvas>
+        <canvas id="lines"></canvas>
+        <script src="js/bg_star.js"></script><!--background js-->
+    </div>
+
+    <div id="contianer">
+
+        <div id="header">
+
+            <div id="h_function_1"><div class="tr"><table><tr class="tr">
+                <td class="td"><div class="d hd" onclick="jump('first')">首页</div></td>
+                <td class="td"><div class="d hd" onclick="jump('second')">天协公告</div></td>
+                <td class="td"><div class="d hd" onclick="jump('third')">部门简介</div></td>
+                <td class="td"><div class="d hd" onclick="jump('fourth')">天文事件</div></td>
+                <td class="td phone">
+                    <div class="d onhover">
+                        天气
+                        <div class="play">
+                            <script src="js/weather_data.js"></script>
+                            <script src="js/weather_menu.js"></script>
+                            <div id="weather"></div>
+                        </div>
+                    </div>
+                </td>
+                <td class="td"><div class="d hd" onclick="jump('fifth')">关于我们</div></td>
+            </tr></table></div></div>
+
+            <div id="rocket" onclick="to_top()">
+                <div class="toTop">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class = "toTopSvg"  viewbox="0 0 64 64">  
+                        <path fill="#fff" d="M42.057,37.732c0,0,4.139-25.58-9.78-36.207c-0.307-0.233-0.573-0.322-0.802-0.329  
+                            c-0.227,0.002-0.493,0.083-0.796,0.311c-13.676,10.31-8.95,35.992-8.95,35.992c-10.18,8-7.703,9.151-1.894,23.262  
+                            c1.108,2.693,3.048,2.06,3.926,0.115c0.877-1.943,2.815-6.232,2.815-6.232l11.029,0.128c0,0,2.035,4.334,2.959,6.298  
+                            c0.922,1.965,2.877,2.644,3.924-0.024C49.974,47.064,52.423,45.969,42.057,37.732z M31.726,23.155  
+                            c-2.546-0.03-4.633-2.118-4.664-4.665c-0.029-2.547,2.012-4.587,4.559-4.558c2.546,0.029,4.634,2.117,4.663,4.664  
+                            C36.314,21.143,34.272,23.184,31.726,23.155z" class="tt"/>  
+                    </svg> 
+                </div>
+            </div>
+
+        </div>
+        
+        <div id="first">
+
+            <div id="pg_1_title">
+                <div class="pg_1_ch">
+                    南邮天文社
+                </div>
+                <div class="pg_1_eng">
+                    <p></p>
+                    <p>Nanjing University of Posts and Telecommunications Astronomy Association</p>
+                </div> 
+            </div>
+        
+            <div id="pg_1_ani" onclick="jump('second')">
+                <img src="img/arrow.svg" alt="点击跳入下一页">
+            </div>
+
+        </div>
+
+        <div id="second">
+
+            <div id="time_line_board">
+
+                <div id="time_line_title"><table><tr>
+                    <td class="time_line_center center">未来计划</td>
+                </tr></table></div>
+
+                <div class="time_line_notice">
+                </div>
+
+            </div>
+
+            <div class="time_line">
+
+                <table>
+                    <tr class="time"></tr>
+                    <tr class="timepoint"></tr>
+                </table>
+                <script type="text/javascript" src="js/timeline.js"></script> 
+                <div class="black"></div>
+            </div>
+
+        </div>
+
+        <div id="third">
+            
+            <div class="wrapper" id = "before_wrapper"  > 
+
+                <div id="box" style = "display:none;" >
+                    <input type="button" class = "active" id = "btn1" data-index = "1"  />
+                    <input type="button" class = "before_active"  id = "btn2" data-index = "0"/>
+                    <input type="button" class = "before_active" id = "btn3"  data-index = "0" />
+                    <input type="button" class = "before_active" id = "btn4"  data-index = "0" /><br/>
+                    <div id = "introduction_section_1">
+                        <h2>观测组</h2>
+                        <p>天文观测是以各类仪器以各种波段接收来自宇宙各类目标天体的辐射与电磁辐射;</p>
+                        <p>具体观测其可见光或特殊波长影像、光谱影像等，借此研究其状态、变化、距离、化学组成等的一种重要途径,</p>
+                        <p>而实地采样分析也属天文观测的范畴内。</p>
+                        <p>文能提笔算方位，武能架镜玩单反。欢迎加入观测组，感受星空的魅力！</p>
+                    </div>
+                    <div id = "introduction_section_2">
+                        <h2>学术组</h2>
+                        <p>这里是天文知识的讲堂，理论学习的圣地。</p>
+                        <p>学习天体的分布、运动、位置、状态、结构、组成、性质及起源和演化;</p>
+                        <p>研究一些在地球大气层外的现象，超新星、伽玛射线暴和宇宙微波背景辐射等;</p>
+                        <p>让我们畅游宇宙，开拓新世界！</p>
+                    </div>
+                    <div id = "introduction_section_3">
+                        <h2>宣传组</h2>
+                        <p>在这里，有色彩在纸上的跃动;</p>
+                        <p>有新媒体与传统媒体的碰撞，当然也有你在天协宣传组的闪耀。</p>
+                    </div>
+                    <div id = "introduction_section_4">
+                        <h2>外联组</h2>
+                        <p>联系南京各校天文协会，联络南京天文联合会。</p>
+                        <p>天空这么大，我想去看看！</p>
+                    </div>
+                </div>
+
+                <div id="pg_2_ani"><img src="img/arrow2.svg" alt="点击查看"></div>
+                <div id="pg_3_ani"><img src="img/arrow3.svg" alt="点击查看" ></div>
+
+            </div>
+
+            <div class="right_pic" style="">
+                <div class = "introduction">
+                    <h1>南京邮电大学天文协会为南邮校科协直属的校级兴趣社团。</h1>
+                    <p>南邮天协自2015年成立，为南邮最年轻的社团之一;</p>
+                    <p>南邮天文协会是南邮所有爱好头顶上灿烂星空的同学的共同家园。</p>
+                    <p>天协的日常活动有观星、学术授课等，以达到普及天文知识的目的。当重大天象事件发生时，组织观测活动;</p>
+                    <p>南邮天协现有天鹰80/100折射式望远镜、双筒望远镜等设备。</p>
+                    <p>希望每一个热爱星空的你，能仰望星空，脚踏实地，我们在南邮天协等你。</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div id="fourth">
+
+            <div class="swiper-container">
+            
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-img" style="background-image: url('img/bo (1).jpg');"></div>
+                        <div class="title" data-swiper-parallax="-200">The VLT Survey Telescope (VST)</div>
+                        <div class="subtitle" data-swiper-parallax="-300">ESO</div>
+                        <div class="text" data-swiper-parallax="-500">
+                            <p>The VLT Survey Telescope (VST) at ESO’s Paranal Observatory in Chile has captured this beautifully detailed image of the galaxy Messier 33, often called the Triangulum Galaxy. This nearby spiral, the second closest large galaxy to our own galaxy, the Milky Way, is packed with bright star clusters, and clouds of gas and dust. This picture is amongst the most detailed wide-field views of this object ever taken and shows the many glowing red gas clouds in the spiral arms with particular clarity.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-img" style="background-image: url('img/bo (2).jpg');">
+                        </div>
+                        <div class="title" data-swiper-parallax="-200">Atacama Large Millimeter/submillimeter Array (ALMA)</div>
+                        <div class="subtitle" data-swiper-parallax="-300">Atacama region</div>
+                        <div class="text" data-swiper-parallax="-500">
+                            <p>ESO Photo Ambassador Babak Tafreshi snapped this remarkable image of the antennas of the Atacama Large Millimeter/submillimeter Array (ALMA), set against the splendour of the Milky Way. The richness of the sky in this picture attests to the unsurpassed conditions for astronomy on the 5000-metre-high Chajnantor plateau in Chile¡¯s Atacama region. </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-img" style="background-image: url('img/bo (5).jpg');">
+                        </div>
+                        <div class="title" data-swiper-parallax="-200">The VLT Survey Telescope (VST)</div>
+                        <div class="subtitle" data-swiper-parallax="-300">Paranal Observatory</div>
+                        <div class="text" data-swiper-parallax="-500">
+                            <p>The VLT Survey Telescope (VST) at ESO’s Paranal Observatory in Chile has captured this beautifully detailed image of the galaxy Messier 33, often called the Triangulum Galaxy. This nearby spiral, the second closest large galaxy to our own galaxy, the Milky Way, is packed with bright star clusters, and clouds of gas and dust. This picture is amongst the most detailed wide-field views of this object ever taken and shows the many glowing red gas clouds in the spiral arms with particular clarity.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-img" style="background-image: url('img/bo (4).jpg');"></div>
+                        <div class="title" data-swiper-parallax="-200"> ESO’s La Silla Observatory in northern Chile</div>
+                        <div class="subtitle" data-swiper-parallax="-300">TAROT telescope</div>
+                        <div class="text" data-swiper-parallax="-500">
+                            <p>The stars rotate around the southern celestial pole during a night at ESO’s La Silla Observatory in northern Chile. The fuzzy parts in the trails on the right are due to the Magellanic Clouds, two small galaxies neighbouring the Milky Way. The dome seen in the image hosts ESO’s 3.6-metre telescope and is home to HARPS (High Accuracy Radial velocity Planet Searcher), the world’s foremost exoplanet hunter. The rectangular building seen in the lower right of the image contains the 0.25-metre TAROT telescope, designed to react very quickly when a gamma-ray burst is detected. Other telescopes at La Silla include the 2.2-metre MPG/ESO telescope, and the 3.58-metre New Technology Telescope, the first telescope to use active optics and, as such, the precursor to all modern large telescopes. La Silla was ESO’s first observing site and is still one of the premier observatories in the southern hemisphere.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-img" style="background-image: url('img/bo (3).jpg');"></div>
+                        <div class="title" data-swiper-parallax="-200">Atacama Large Millimeter/submillimeter Array (ALMA)</div>
+                        <div class="subtitle" data-swiper-parallax="-300">Observations</div>
+                        <div class="text" data-swiper-parallax="-500">
+                            <p>Observations using the Atacama Large Millimeter/submillimeter Array (ALMA) have revealed an unexpected spiral structure in the material around the old star R Sculptoris. This feature has never been seen before and is probably caused by a hidden companion star orbiting the star. This slice through the new ALMA data reveals the shell around the star, which shows up as the outer circular ring, as well as a very clear spiral structure in the inner material.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-scrollbar"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+                <div class="swiper-button-next swiper-button-white"></div> 
+            </div>
+            <script src="js/pictransport.js"></script>
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    loop:true,
+                    autoplay:5000,
+                    scrollbar:'.swiper-scrollbar',
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    parallax: true,
+                    speed: 1500,
+                });
+            </script>
+
+            
+        </div>
+
+        <div id="fifth">
+
+            <div id="welcome">
+                <h1>仰望星空，脚踏实地</h1>
+                <h3>我们在南邮天协等你</h3>
+            </div>
+
+            <div id="about">
+
+                <div class="icon"><img src="img/AAA.png" alt="天协会徽">
+                    <div id = "word_title">
+                        <p>南京邮电大学天文社</p>
+                        <p>Astronomy Ametuers' Association</p>
+                    </div>
+                </div>
+                <div id = "connect_us"><ul>
+                    <li>联系我们:</li><ul>
+                    <li>2016新生QQ群：564249183</li>
+                    <li>微信：南邮浪漫追星社</li>   
+                </ul></ul></div>
+                <div id = "developer"><ul>
+                    <li>developer:</li><ul>
+                    <li>王玉函</li>
+                    <li>王化益</li>
+                    <li>陈建良</li>
+                </ul></ul></div>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script type="text/javascript" src="js/second.js"></script>
+</body>
+</html>

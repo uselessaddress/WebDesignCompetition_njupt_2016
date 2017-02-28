@@ -1,0 +1,89 @@
+/*==============全局控制=================*/
+  html,
+  body {
+    color: #fff;
+    margin: 0 auto;
+    padding: 0 auto;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    }
+  canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    }
+  #background {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    }
+  table{
+    width: 100%;
+    height: 100%;
+    }
+  /*====图层控制====*/
+    #header {
+      z-index: 100;
+      }
+    #background {
+      z-index: -100;
+      }
+    #first,
+    #second,
+    #third,
+    #fourth,
+    #fifth{
+      z-index: 1;
+      }
+  /*=====end=====*/
+  #background,
+  #header,
+  #first,
+  #second,
+  #third,
+  #fourth,
+  #fifth{
+    width: 100%;
+    }
+  #background,
+  #first,
+  #second,
+  #third,
+  #fourth,
+  #fifth{
+    height: 100vh;
+    overflow: hidden;
+    }
+  #second {
+    font-family: Microsoft YaHei;
+    position: relative;
+    background-color: rgba(51, 59, 68,1);
+    }
+  #third{
+    font-family: Microsoft YaHei;
+    font-weight: normal;
+    background-image: url(../img/bg_new.jpg);
+  }
+  #fourth{
+    background-color: rgb(43,90,118);
+    }
+  #header {
+    height: 14vh;
+    position: fixed;
+    top: 0px;
+    }
+  #contianer {
+    width: 100%;
+    overflow: hidden;
+    }
+  .center {
+    text-align: center;
+    }
+  .left{
+    text-align: left;
+    }
+  .right{
+    text-align: right;
+    }
+/*===================end================*/

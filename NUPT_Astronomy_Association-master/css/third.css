@@ -1,0 +1,112 @@
+.wrapper {
+  display: block;
+  height: 100%;
+  width: 9%;
+  padding-top: 12vh;
+  float: left;
+  text-align: center; 
+  background-size: cover;
+  border-radius: 0px 10px 10px 0px;
+  }
+  .active{
+    width:20px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ffc125;
+    }
+  .before_active{
+    width:20px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    }
+    #introduction_section_1{
+      display:block;
+      font-size:20px;
+      top:50px;
+      position: relative;
+      line-height: 300%;
+      }
+    #introduction_section_2{
+      font-size:20px;
+      top:50px;
+      display:none;
+      position: relative;
+      line-height: 300%;
+      }
+    #introduction_section_3{
+      font-size:20px;
+      top:50px;
+      display:none;
+      position: relative;
+      line-height: 300%;
+      }
+    #introduction_section_4{
+      font-size:20px;
+      top:50px;
+      display:none;
+      position: relative;
+      line-height: 300%;
+      }
+    #pg_2_ani {
+      cursor: pointer;
+      position: relative;
+      width: 50%;
+      margin-left: 50%;
+      margin-top: 210%;
+      }
+      #pg_2_ani img {
+        width:100%;
+        animation: arrow1 0.5s infinite;
+        }
+    #pg_3_ani {
+      cursor: pointer;
+      position: relative;
+      display:none;
+      width: 10%;
+      margin-left: 100%;
+      margin-top: -8%;
+      }
+      #pg_3_ani img {
+        width:50%;
+        animation: arrow2 0.5s infinite;
+        }   
+.right_pic {
+  width: 90%;
+  height: 100%;
+  float: right;
+  background-size: 100% 100%;
+  border-radius: 10px 0px 0px 10px;
+  }
+  .introduction{
+    font-size:20px;
+    display: block;
+    position:relative;
+    top:150px;
+    line-height:300%;
+    text-align: center;
+    }
+/*动画效果*/
+  /*箭头*/
+  @keyframes arrow1 {
+    from {
+      padding-left: 10%;
+      opacity: 0;
+      }
+    to {
+      padding-left: 20%;
+      opacity: 1;
+      }
+    }
+  @keyframes arrow2 {
+    from {
+      padding-right: 20%;
+      opacity: 0;
+      }
+    to {
+      padding-right: 10%;
+      opacity: 1;
+      }
+    }
